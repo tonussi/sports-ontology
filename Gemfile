@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # A higher level command-line oriented interface
 gem 'thor'
