@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="urn:absolute:sport-ontology"
+     xml:base="urn:absolute:sports-ontology"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="urn:absolute:sport-ontology">
-    <Prefix name="" IRI="http://www.co-ode.org/ontologies/sport/sport.owl#"/>
+     ontologyIRI="urn:absolute:sports-ontology">
+    <Prefix name="" IRI="urn:absolute:sports-ontology"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -26,31 +26,19 @@
         <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#neymar"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SwimFamous"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI="pizza:Ball"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="pizza:Sport"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#CyclingFamous"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty abbreviatedIRI="pizza:hasFamous"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#albertoContador"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="pizza:Water"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#swim"/>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#swim"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="pizza:Asphalt"/>
@@ -59,37 +47,28 @@
         <ObjectProperty abbreviatedIRI="pizza:isPlayerOf"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#cesarCielo"/>
-    </Declaration>
-    <Declaration>
         <Class abbreviatedIRI="pizza:Raquet"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#cycling"/>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#notHasEquipament"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#notHasEquipament"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#tennis"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="pizza:Player"/>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#soccer"/>
+        <Class abbreviatedIRI="pizza:Player"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SoccerFamous"/>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#soccer"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isNotPlayedIn"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="pizza:Famous"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="pizza:Equipament"/>
@@ -98,7 +77,7 @@
         <Class abbreviatedIRI="owl:Thing"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TennisFamous"/>
+        <Class IRI="urn:absolute:sport-ontology#Trunks"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="pizza:Grass"/>
@@ -110,13 +89,10 @@
         <Class abbreviatedIRI="pizza:Ground"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="pizza:Bicycle"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#gustavoKuerten"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="pizza:Clay"/>
@@ -142,10 +118,6 @@
         <Class abbreviatedIRI="pizza:Ground"/>
     </SubClassOf>
     <SubClassOf>
-        <Class abbreviatedIRI="pizza:Famous"/>
-        <Class abbreviatedIRI="pizza:Player"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class abbreviatedIRI="pizza:Grass"/>
         <Class abbreviatedIRI="pizza:Ground"/>
     </SubClassOf>
@@ -158,117 +130,130 @@
         <Class abbreviatedIRI="pizza:Ground"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#CyclingFamous"/>
-        <Class abbreviatedIRI="pizza:Famous"/>
+        <Class IRI="urn:absolute:sport-ontology#Trunks"/>
+        <Class abbreviatedIRI="pizza:Equipament"/>
     </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SoccerFamous"/>
-        <Class abbreviatedIRI="pizza:Famous"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SwimFamous"/>
-        <Class abbreviatedIRI="pizza:Famous"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#TennisFamous"/>
-        <Class abbreviatedIRI="pizza:Famous"/>
-    </SubClassOf>
-    <ClassAssertion>
-        <Class IRI="#CyclingFamous"/>
-        <NamedIndividual IRI="#albertoContador"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SwimFamous"/>
-        <NamedIndividual IRI="#cesarCielo"/>
-    </ClassAssertion>
     <ClassAssertion>
         <Class abbreviatedIRI="pizza:Sport"/>
-        <NamedIndividual IRI="#cycling"/>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
     </ClassAssertion>
     <ClassAssertion>
         <ObjectIntersectionOf>
             <Class abbreviatedIRI="pizza:Sport"/>
-            <ObjectIntersectionOf>
-                <ObjectIntersectionOf>
-                    <ObjectComplementOf>
-                        <Class abbreviatedIRI="owl:Thing"/>
-                    </ObjectComplementOf>
-                    <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="#isPlayedIn"/>
-                        <Class abbreviatedIRI="pizza:Water"/>
-                    </ObjectSomeValuesFrom>
-                </ObjectIntersectionOf>
+            <ObjectComplementOf>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
-                    <Class abbreviatedIRI="pizza:Bicycle"/>
+                    <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+                    <Class abbreviatedIRI="pizza:Water"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
+                <Class abbreviatedIRI="pizza:Bicycle"/>
+            </ObjectSomeValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
+                <Class abbreviatedIRI="pizza:Player"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pizza:Sport"/>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#soccer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="pizza:Sport"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
+                <Class abbreviatedIRI="pizza:Ball"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+                <Class abbreviatedIRI="pizza:Grass"/>
+            </ObjectSomeValuesFrom>
+            <ObjectExactCardinality cardinality="22">
+                <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
+                <Class abbreviatedIRI="pizza:Player"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#soccer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pizza:Sport"/>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#swim"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="pizza:Sport"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
+                <Class IRI="urn:absolute:sport-ontology#Trunks"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+                <Class abbreviatedIRI="pizza:Water"/>
+            </ObjectSomeValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
+                <Class abbreviatedIRI="pizza:Player"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#swim"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pizza:Sport"/>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="pizza:Sport"/>
+            <ObjectUnionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
+                    <Class abbreviatedIRI="pizza:Clay"/>
                 </ObjectSomeValuesFrom>
                 <ObjectSomeValuesFrom>
-                    <ObjectProperty abbreviatedIRI="pizza:hasFamous"/>
-                    <Class IRI="#CyclingFamous"/>
+                    <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+                    <Class abbreviatedIRI="pizza:Cement"/>
                 </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+                    <Class abbreviatedIRI="pizza:Grass"/>
+                </ObjectSomeValuesFrom>
+            </ObjectUnionOf>
+            <ObjectUnionOf>
                 <ObjectExactCardinality cardinality="1">
                     <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
                     <Class abbreviatedIRI="pizza:Player"/>
                 </ObjectExactCardinality>
-            </ObjectIntersectionOf>
+                <ObjectExactCardinality cardinality="4">
+                    <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
+                    <Class abbreviatedIRI="pizza:Player"/>
+                </ObjectExactCardinality>
+            </ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
+                <Class abbreviatedIRI="pizza:Raquet"/>
+            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
-        <NamedIndividual IRI="#cycling"/>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
     </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TennisFamous"/>
-        <NamedIndividual IRI="#gustavoKuerten"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#SoccerFamous"/>
-        <NamedIndividual IRI="#neymar"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="pizza:Sport"/>
-        <NamedIndividual IRI="#soccer"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="pizza:Sport"/>
-        <NamedIndividual IRI="#swim"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class abbreviatedIRI="pizza:Sport"/>
-        <NamedIndividual IRI="#tennis"/>
-    </ClassAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="pizza:isPlayerOf"/>
-        <NamedIndividual IRI="#albertoContador"/>
-        <NamedIndividual IRI="#cycling"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="pizza:isPlayerOf"/>
-        <NamedIndividual IRI="#cesarCielo"/>
-        <NamedIndividual IRI="#swim"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="pizza:isPlayerOf"/>
-        <NamedIndividual IRI="#gustavoKuerten"/>
-        <NamedIndividual IRI="#tennis"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="pizza:isPlayerOf"/>
-        <NamedIndividual IRI="#neymar"/>
-        <NamedIndividual IRI="#soccer"/>
-    </ObjectPropertyAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#notHasEquipament"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#notHasEquipament"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
-        <ObjectProperty IRI="#notHasEquipament"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#notHasEquipament"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#isNotPlayedIn"/>
-        <ObjectProperty IRI="#isPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
@@ -287,15 +272,15 @@
         <Class abbreviatedIRI="pizza:Sport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isNotPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
         <Class abbreviatedIRI="pizza:Sport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
         <Class abbreviatedIRI="pizza:Sport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#notHasEquipament"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#notHasEquipament"/>
         <Class abbreviatedIRI="pizza:Sport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
@@ -303,10 +288,6 @@
         <Class abbreviatedIRI="pizza:Equipament"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="pizza:hasFamous"/>
-        <Class abbreviatedIRI="pizza:Famous"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
         <Class abbreviatedIRI="pizza:Player"/>
     </ObjectPropertyRange>
@@ -315,24 +296,24 @@
         <Class abbreviatedIRI="pizza:Player"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isNotPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
         <Class abbreviatedIRI="pizza:Ground"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
         <Class abbreviatedIRI="pizza:Ground"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#notHasEquipament"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#notHasEquipament"/>
         <Class abbreviatedIRI="pizza:Equipament"/>
     </ObjectPropertyRange>
     <DisjointObjectProperties>
         <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
-        <ObjectProperty IRI="#notHasEquipament"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#notHasEquipament"/>
     </DisjointObjectProperties>
     <DisjointObjectProperties>
-        <ObjectProperty IRI="#isNotPlayedIn"/>
-        <ObjectProperty IRI="#isPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
     </DisjointObjectProperties>
 </Ontology>
 

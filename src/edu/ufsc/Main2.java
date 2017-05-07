@@ -35,6 +35,7 @@ public class Main2 {
 		SimpleInference simpleInference = new SimpleInference(ontology);
 
 		List<OWLClass> owlClasses = new ArrayList<OWLClass>(simpleInference.getOwlClasses());
+		
 
 		for (OWLClass owlClass : owlClasses) {
 
