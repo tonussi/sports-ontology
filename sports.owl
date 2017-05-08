@@ -26,39 +26,6 @@
         <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
     </Declaration>
     <Declaration>
-        <Class abbreviatedIRI="pizza:Ball"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="pizza:Sport"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="pizza:hasFamous"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="pizza:Water"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="urn:absolute:sport-ontology#swim"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="pizza:Asphalt"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="pizza:isPlayerOf"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="pizza:Raquet"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="urn:absolute:sport-ontology#notHasEquipament"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
     </Declaration>
     <Declaration>
@@ -71,7 +38,13 @@
         <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
     </Declaration>
     <Declaration>
+        <Class abbreviatedIRI="pizza:Ball"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI="pizza:Equipament"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pizza:Sport"/>
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="owl:Thing"/>
@@ -83,10 +56,19 @@
         <Class abbreviatedIRI="pizza:Grass"/>
     </Declaration>
     <Declaration>
+        <Class abbreviatedIRI="pizza:Water"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI="pizza:Cement"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#swim"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI="pizza:Ground"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pizza:Asphalt"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
@@ -95,7 +77,19 @@
         <Class abbreviatedIRI="pizza:Bicycle"/>
     </Declaration>
     <Declaration>
+        <Class abbreviatedIRI="pizza:Raquet"/>
+    </Declaration>
+    <Declaration>
         <Class abbreviatedIRI="pizza:Clay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="urn:absolute:sport-ontology#notHasEquipament"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
     </Declaration>
     <SubClassOf>
         <Class abbreviatedIRI="pizza:Asphalt"/>
@@ -138,23 +132,31 @@
         <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
     </ClassAssertion>
     <ClassAssertion>
-        <ObjectIntersectionOf>
-            <Class abbreviatedIRI="pizza:Sport"/>
-            <ObjectComplementOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
-                    <Class abbreviatedIRI="pizza:Water"/>
-                </ObjectSomeValuesFrom>
-            </ObjectComplementOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
-                <Class abbreviatedIRI="pizza:Bicycle"/>
-            </ObjectSomeValuesFrom>
-            <ObjectExactCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
-                <Class abbreviatedIRI="pizza:Player"/>
-            </ObjectExactCardinality>
-        </ObjectIntersectionOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
+            <Class abbreviatedIRI="pizza:Bicycle"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+            <Class abbreviatedIRI="pizza:Asphalt"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+            <Class abbreviatedIRI="pizza:Cement"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
+            <Class abbreviatedIRI="pizza:Player"/>
+        </ObjectExactCardinality>
         <NamedIndividual IRI="urn:absolute:sport-ontology#cycling"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -162,21 +164,24 @@
         <NamedIndividual IRI="urn:absolute:sport-ontology#soccer"/>
     </ClassAssertion>
     <ClassAssertion>
-        <ObjectIntersectionOf>
-            <Class abbreviatedIRI="pizza:Sport"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
-                <Class abbreviatedIRI="pizza:Ball"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
-                <Class abbreviatedIRI="pizza:Grass"/>
-            </ObjectSomeValuesFrom>
-            <ObjectExactCardinality cardinality="22">
-                <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
-                <Class abbreviatedIRI="pizza:Player"/>
-            </ObjectExactCardinality>
-        </ObjectIntersectionOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
+            <Class abbreviatedIRI="pizza:Ball"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#soccer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+            <Class abbreviatedIRI="pizza:Grass"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#soccer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectExactCardinality cardinality="22">
+            <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
+            <Class abbreviatedIRI="pizza:Player"/>
+        </ObjectExactCardinality>
         <NamedIndividual IRI="urn:absolute:sport-ontology#soccer"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -184,21 +189,24 @@
         <NamedIndividual IRI="urn:absolute:sport-ontology#swim"/>
     </ClassAssertion>
     <ClassAssertion>
-        <ObjectIntersectionOf>
-            <Class abbreviatedIRI="pizza:Sport"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
-                <Class IRI="urn:absolute:sport-ontology#Trunks"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
-                <Class abbreviatedIRI="pizza:Water"/>
-            </ObjectSomeValuesFrom>
-            <ObjectExactCardinality cardinality="1">
-                <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
-                <Class abbreviatedIRI="pizza:Player"/>
-            </ObjectExactCardinality>
-        </ObjectIntersectionOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
+            <Class IRI="urn:absolute:sport-ontology#Trunks"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#swim"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+            <Class abbreviatedIRI="pizza:Water"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#swim"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
+            <Class abbreviatedIRI="pizza:Player"/>
+        </ObjectExactCardinality>
         <NamedIndividual IRI="urn:absolute:sport-ontology#swim"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -206,37 +214,45 @@
         <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
     </ClassAssertion>
     <ClassAssertion>
-        <ObjectIntersectionOf>
-            <Class abbreviatedIRI="pizza:Sport"/>
-            <ObjectUnionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
-                    <Class abbreviatedIRI="pizza:Clay"/>
-                </ObjectSomeValuesFrom>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
-                    <Class abbreviatedIRI="pizza:Cement"/>
-                </ObjectSomeValuesFrom>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
-                    <Class abbreviatedIRI="pizza:Grass"/>
-                </ObjectSomeValuesFrom>
-            </ObjectUnionOf>
-            <ObjectUnionOf>
-                <ObjectExactCardinality cardinality="1">
-                    <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
-                    <Class abbreviatedIRI="pizza:Player"/>
-                </ObjectExactCardinality>
-                <ObjectExactCardinality cardinality="4">
-                    <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
-                    <Class abbreviatedIRI="pizza:Player"/>
-                </ObjectExactCardinality>
-            </ObjectUnionOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
-                <Class abbreviatedIRI="pizza:Raquet"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="pizza:hasEquipament"/>
+            <Class abbreviatedIRI="pizza:Raquet"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+            <Class abbreviatedIRI="pizza:Cement"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+            <Class abbreviatedIRI="pizza:Clay"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
+            <Class abbreviatedIRI="pizza:Grass"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
+            <Class abbreviatedIRI="pizza:Player"/>
+        </ObjectExactCardinality>
+        <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectExactCardinality cardinality="4">
+            <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
+            <Class abbreviatedIRI="pizza:Player"/>
+        </ObjectExactCardinality>
         <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
     </ClassAssertion>
     <SubObjectPropertyOf>
@@ -260,15 +276,7 @@
         <Class abbreviatedIRI="pizza:Sport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="pizza:hasFamous"/>
-        <Class abbreviatedIRI="pizza:Sport"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
-        <Class abbreviatedIRI="pizza:Sport"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="pizza:isPlayerOf"/>
         <Class abbreviatedIRI="pizza:Sport"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -292,10 +300,6 @@
         <Class abbreviatedIRI="pizza:Player"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="pizza:isPlayerOf"/>
-        <Class abbreviatedIRI="pizza:Player"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
         <Class abbreviatedIRI="pizza:Ground"/>
     </ObjectPropertyRange>
@@ -315,6 +319,116 @@
         <ObjectProperty IRI="urn:absolute:sport-ontology#isNotPlayedIn"/>
         <ObjectProperty IRI="urn:absolute:sport-ontology#isPlayedIn"/>
     </DisjointObjectProperties>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Asphalt</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Asfalto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Ball</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Bola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Bicycle</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Bicicleta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Cement</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Cimento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Clay</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Saibro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Equipament</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Equipamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Grass</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Grama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Ground</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Terreno</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Player</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Jogador</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Raquet</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Raquete</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Sport</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Esporte</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:Water</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">água</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:hasEquipament</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">utiliza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>pizza:isPlayedBy</AbbreviatedIRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">é jogador por</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>urn:absolute:sport-ontology#Trunks</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sunga</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>urn:absolute:sport-ontology#cycling</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ciclismo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>urn:absolute:sport-ontology#isNotPlayedIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">não é jogador no(a)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>urn:absolute:sport-ontology#isPlayedIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">é jogado no(a)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>urn:absolute:sport-ontology#notHasEquipament</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">não utiliza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>urn:absolute:sport-ontology#soccer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">futebol</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>urn:absolute:sport-ontology#swim</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">natação</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>urn:absolute:sport-ontology#tennis</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tênis</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
