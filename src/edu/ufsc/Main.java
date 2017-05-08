@@ -86,7 +86,7 @@ public class Main {
 	}
 
 	private static void printSportsGuessed(String sport) {
-		System.out.println("\nAhãa, já sabemos seu esporte. Você pensou emm ");
+		System.out.println("\nAhãa, já sabemos seu esporte. Você pensou em ");
 		System.err.print(sport);
 	}
 
