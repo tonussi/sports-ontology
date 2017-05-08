@@ -242,7 +242,7 @@
         <NamedIndividual IRI="urn:absolute:sport-ontology#tennis"/>
     </ClassAssertion>
     <ClassAssertion>
-        <ObjectExactCardinality cardinality="1">
+        <ObjectExactCardinality cardinality="2">
             <ObjectProperty abbreviatedIRI="pizza:isPlayedBy"/>
             <Class abbreviatedIRI="pizza:Player"/>
         </ObjectExactCardinality>
@@ -387,7 +387,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>pizza:isPlayedBy</AbbreviatedIRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">é jogador por</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">pode ser jogado por</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -407,7 +407,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>urn:absolute:sport-ontology#isPlayedIn</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">é jogado no(a)</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">pode ser jogado no(a)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
