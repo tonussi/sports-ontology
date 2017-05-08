@@ -39,7 +39,7 @@ public class Main {
 		OWLDataFactory df = OWLManager.getOWLDataFactory();
 		SimpleInference simpleInference = new SimpleInference(ontology);
 
-		PrefixManager pm = new DefaultPrefixManager("http://www.co-ode.org/ontologies/pizza/pizza.owl#");
+		PrefixManager pm = new DefaultPrefixManager("http://www.co-ode.org/ontologies/sport/sport.owl#");
 		OWLClass sportClass = df.getOWLClass("Sport", pm);
 
 		List<OWLNamedIndividual> sports = new ArrayList<OWLNamedIndividual>(simpleInference.getIndividuals(sportClass));
@@ -77,6 +77,7 @@ public class Main {
 
 	}
 
+	@SuppressWarnings("incomplete-switch")
 	private static HashMap<OWLIndividual, List<Question>> handleQuestion(Question question, Awnser anwser,
 			HashMap<OWLIndividual, List<Question>> sportQuestions) {
 		switch (anwser) {
