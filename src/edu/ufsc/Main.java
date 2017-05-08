@@ -9,19 +9,15 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 
-import org.protege.owl.codegeneration.inference.SimpleInference;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.PrefixManager;
-import org.semanticweb.owlapi.util.DefaultPrefixManager;
 
 import uk.ac.manchester.cs.owl.owlapi.OWLObjectExactCardinalityImpl;
 
@@ -32,18 +28,14 @@ public class Main {
 	private static List<Question> maybeAnwsers;
 
 	public static void main(String[] args) throws Exception {
+
 		scanner = new Scanner(System.in);
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		String path = "sports.owl";
 		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File(path));
 		commentaryExtractor = new CommentaryExtractor(ontology);
-		OWLDataFactory df = OWLManager.getOWLDataFactory();
-		SimpleInference simpleInference = new SimpleInference(ontology);
 
-		PrefixManager pm = new DefaultPrefixManager("http://www.co-ode.org/ontologies/sport/sport.owl#");
-		OWLClass sportClass = df.getOWLClass("Sport", pm);
-
-		List<OWLNamedIndividual> sports = new ArrayList<OWLNamedIndividual>(simpleInference.getIndividuals(sportClass));
+		List<OWLNamedIndividual> sports = new ArrayList<OWLNamedIndividual>(ontology.getIndividualsInSignature());
 		HashMap<OWLIndividual, List<Question>> sportQuestions = buildQuestions(ontology, sports);
 		List<Question> questions = separateQuestionsFromIndividuals(sportQuestions);
 		Question currentQuestion = null;
