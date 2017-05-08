@@ -29,6 +29,7 @@ public class Main {
 
 	private static Scanner scanner;
 	private static CommentaryExtractor commentaryExtractor;
+	private static List<Question> maybeAnwsers;
 
 	public static void main(String[] args) throws Exception {
 		scanner = new Scanner(System.in);
@@ -46,28 +47,30 @@ public class Main {
 		HashMap<OWLIndividual, List<Question>> sportQuestions = buildQuestions(ontology, sports);
 		List<Question> questions = separateQuestionsFromIndividuals(sportQuestions);
 		Question currentQuestion = null;
-
+		maybeAnwsers = new ArrayList<Question>();
 		printWelcomeMessage();
 
-		while (!questions.isEmpty() && sportQuestions.size() != 1) {
+		while (!questions.isEmpty() && questions.size() != maybeAnwsers.size() && sportQuestions.size() != 1) {
 			currentQuestion = questions.get(0);
 			Awnser anwser = ask(currentQuestion);
 			sportQuestions = handleQuestion(currentQuestion, anwser, sportQuestions);
 			questions = separateQuestionsFromIndividuals(sportQuestions);
+			questions.removeAll(maybeAnwsers);
 		}
 
 		if (questions.isEmpty()) {
 			System.out.println("Oooops, falhamos ao tentar ler sua mente.");
-		} else {
+		} else if (sportQuestions.size() != 1) {
+			Set<OWLIndividual> individuals = sportQuestions.keySet();
+			List<String> individualsName = new ArrayList<>();
+			for (OWLIndividual owlIndividual : individuals) {
+				individualsName.add(commentaryExtractor.extractCommentary(owlIndividual.getSignature().iterator().next()));
+			}
+			printSportsDoubtGuessed(individualsName.toArray(new String[individualsName.size()]));
+		} else if (sportQuestions.size() == 1) {
 			OWLEntity sportIndividualEntity = sportQuestions.keySet().iterator().next().getSignature().iterator().next();
 			printSportsGuessed(commentaryExtractor.extractCommentary(sportIndividualEntity));
 		}
-	}
-
-	private static void printSportsGuessed(String sport) {
-		System.out.println("\nAhãa, já sabemos seu esporte. Você pensou emm ");
-		System.err.print(sport);
-
 	}
 
 	private static void printWelcomeMessage() {
@@ -77,18 +80,27 @@ public class Main {
 
 	}
 
-	@SuppressWarnings("incomplete-switch")
+	private static void printSportsDoubtGuessed(String[] sportNames) {
+		System.out.println("\nFicamos em dúvida... Provávelmente você pensou em: ");
+		System.err.print(String.join(", ", sportNames));
+	}
+
+	private static void printSportsGuessed(String sport) {
+		System.out.println("\nAhãa, já sabemos seu esporte. Você pensou emm ");
+		System.err.print(sport);
+	}
+
 	private static HashMap<OWLIndividual, List<Question>> handleQuestion(Question question, Awnser anwser,
 			HashMap<OWLIndividual, List<Question>> sportQuestions) {
 		switch (anwser) {
 		case YES:
-			sportQuestions = removeIndividuals(sportQuestions, question, false);
-			break;
+			return removeQuestion(removeIndividuals(sportQuestions, question, false), question);
 		case NO:
-			sportQuestions = removeIndividuals(sportQuestions, question, true);
-			break;
+			return removeQuestion(removeIndividuals(sportQuestions, question, true), question);
+		default:
+			maybeAnwsers.add(question);
+			return sportQuestions;
 		}
-		return removeQuestion(sportQuestions, question);
 	}
 
 	private static HashMap<OWLIndividual, List<Question>> removeQuestion(HashMap<OWLIndividual, List<Question>> sportQuestions,
@@ -124,7 +136,7 @@ public class Main {
 		} else if (anwser.startsWith("n")) {
 			return Awnser.NO;
 		}
-		return Awnser.MAYBER;
+		return Awnser.MAYBE;
 	}
 
 	public static List<Question> separateQuestionsFromIndividuals(HashMap<OWLIndividual, List<Question>> sportQuestions) {
